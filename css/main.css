@@ -1,0 +1,21 @@
+body{
+    background-color: #ffd05a;
+}
+
+.my-md-0{
+    background-color: #d2a10e;
+    text-align: center;
+}
+
+#buttons {
+    background-color: #0b2e13;
+    text-align: center;
+}
+
+.secondRow{
+    height: 100px;
+}
+
+.bg-turquoise{
+    background-color: #30a297;
+}
