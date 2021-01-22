@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Empty!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    
+    <nav id="headerKinda" class="navbar navbar-expand-lg navbar-dark bg-turquoise sticky-top" >
+        <a href="./index.html" class="navbar-brand">
+            <img src="./img/home.svg" alt="logo" height="35" width="35">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="navbar-collapse collapse justify-content-center text-center" id="collapsingNavbar">
+            <ul class="navbar-nav justify-content-center">
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-warning btn-md">
+                            <a href="./index.html" class="nav-link">Go back</a>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <div id="damnBoard" class="container-fluid">
+        <canvas id="canvas" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>   
+    </div>
+
+    <nav id="footerKinda" class="navbar navbar-dark bg-turquoise fixed-bottom">
+        <p>This garbage is made by Merolod</p>
+        <!--nikitasnegovs.github.io-->
+    </nav>
+    
+    <script>
+        //window.onresize = resizeCanvas;
+        
+        function vh(v) {
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            return (v * h) / 100;
+        }
+        
+        //function resizeCanvas() {
+            var board = document.getElementById('damnBoard');
+            var headerHeight = document.getElementById('headerKinda').clientHeight;
+            var footerHeight = document.getElementById('footerKinda').clientHeight;
+        
+            board.style.height = `${vh(100)-headerHeight-footerHeight}px`;
+        //}
+    </script>
+    
+    <script>
+        var canvas = document.querySelector('canvas');
+
+        function fitToContainer(canvas){
+            // Make it visually fill the positioned parent
+            canvas.style.width ='100%';
+            canvas.style.height='100%';
+            // ...then set the internal size to match
+            canvas.width  = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }    
+        
+        fitToContainer(canvas);
+    </script>
+    <script>
+        //Prepare canvas
+        var ctx = document.getElementById('canvas').getContext('2d');
+        //Set up size bounds
+        var width = canvas.width;
+        var height = canvas.height;
+        var pictureCount = 3;
+    
+        var myTimer = setInterval(myDraw, 200);  
+        
+        var img = new Image();
+        
+        function myDraw() {
+            var picId = Math.floor(Math.random() * pictureCount); 
+            
+            img.src = `./memes/meme${picId}.png`;
+            
+            ctx.drawImage(img, Math.floor(Math.random() * width), Math.floor(Math.random() * height));
+        }
+    </script>
+</body>
+</html>
