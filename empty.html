@@ -12,22 +12,45 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-turquoise sticky-top">
-        <a href="./index.html" class="navbar-brand"  style=" align: center;">
-            <img src="./img/brand.svg" alt="logo" height="35" width="35">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-turquoise sticky-top" >
+        <a href="./index.html" class="navbar-brand">
+            <img src="./img/home.svg" alt="logo" height="35" width="35">
         </a>
-        <h1 class="navbar-text" style="text-align: center;">This page is empty right now.</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="navbar-collapse collapse justify-content-center text-center" id="collapsingNavbar">
+            <ul class="navbar-nav justify-content-center">
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-warning btn-md">
+                            <a href="./index.html" class="nav-link">Go back</a>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
     </nav>
 
     <div class="container-fluid">
 
         <div class="row">
+            <h1 class="col-md-12" style="text-align: center;">This page is empty at the moment.</h1>
+        </div>
+        
+        <div class="row">
             <div class="col-md-12" style=" text-align: center;">
-                <img src="./img/empty-box.svg" alt="empty-box" height="320" width="320">
+                <img src="./img/trash.svg" alt="empty-page" height="320" width="320">
             </div>
         </div>
-
+        
     </div>
 
+    <nav class="navbar navbar-dark bg-turquoise fixed-bottom">
+        <p>This garbage is made by Merolod</p>
+        <!--nikitasnegovs.github.io-->
+    </nav>
 </body>
 </html>
